@@ -21,16 +21,20 @@ class App extends Component {
       {
         id :3,
         title :"Shopping",
-        completed: false
+        completed: true
 
       }
     ]
+  }
+
+  markComplete = (id) => {
+    this.setState({ todos: this.state.todos.map( todo)})
   }
   render() {
     
       return (
           <div className= "App">
-              < Todos todos = { this.state.todos} />
+              < Todos todos = { this.state.todos} markComplete={this.markComplete} />
           </div>
       )
   }
